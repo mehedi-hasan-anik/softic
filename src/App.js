@@ -1,25 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [postData, setPostData] = useState(null);
+  const [commentData, setCommentData] = useState(null);
+  const [userData, setUserData] = useState(null);
+  const [photoData, setPhotoData] = useState(null);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => res.json())
+      .then((data) => setPostData(data));
+
+    fetch("https://jsonplaceholder.typicode.com/comments")
+      .then((res) => res.json())
+      .then((data) => setCommentData(data));
+
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data) => setUserData(data));
+
+    fetch("https://jsonplaceholder.typicode.com/photos")
+      .then((res) => res.json())
+      .then((data) => setPhotoData(data));
+  }, []);
+
+  const mergePostDataAndCommentData = postData?.map((postItem) => ({
+    ...postItem,
+    ...commentData?.find((commentItem) => commentItem.id === postItem.id),
+  }));
+
+  const mergePostDataAndCommentDataAndUserData =
+    mergePostDataAndCommentData?.map((mergePostDataAndCommentDataItem) => ({
+      ...mergePostDataAndCommentDataItem,
+      ...userData?.find(
+        (userDataItem) => userDataItem.id === mergePostDataAndCommentDataItem.id
+      ),
+    }));
+
+  const finalResult = mergePostDataAndCommentDataAndUserData?.map(
+    (mergePostDataAndCommentDataAndUserDataItem) => ({
+      ...mergePostDataAndCommentDataAndUserDataItem,
+      ...photoData?.find(
+        (photoDataItem) =>
+          photoDataItem.id === mergePostDataAndCommentDataAndUserDataItem.id
+      ),
+    })
+  );
+
+  console.log(finalResult.slice(0, 20));
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>test</h1>
     </div>
   );
-}
+};
 
 export default App;
