@@ -1,3 +1,4 @@
+import { DeleteOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -35,6 +36,7 @@ const SingleCard = ({ item }) => {
         <p>{item?.body}</p>
       </div>
       <Button type="primary" onClick={() => handleDelete(item)}>
+        <DeleteOutlined />
         Delete
       </Button>
     </div>
