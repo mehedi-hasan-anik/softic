@@ -1,8 +1,9 @@
 .home-card-wrapper {
-  background: #f1ebeb;
   padding: 20px 20px 40px 20px;
   text-align: left;
   margin: 20px 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
 }
 .user-name-and-img {
   display: flex;
