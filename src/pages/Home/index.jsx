@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import SingleCard from "../../components/SingleCard";
 import { totalData } from "../../redux/action/cardAction";
 import "./Home.styles.css";
-// import SingleCard from "./"
 
 const Home = () => {
   const { totalResult } = useSelector((state) => state?.result);
