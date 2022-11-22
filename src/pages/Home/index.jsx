@@ -14,8 +14,6 @@ const Home = () => {
   const [photoData, setPhotoData] = useState(null);
   const dispatch = useDispatch();
 
-  console.log("totalResult", totalResult);
-
   const getPostData = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
     setPostData(await response.json());
@@ -70,6 +68,10 @@ const Home = () => {
       })
     );
     dispatch(totalData(finalResult?.slice(0, 20)));
+    localStorage.setItem(
+      "reduxData",
+      JSON.stringify(finalResult?.slice(0, 20))
+    );
   }, [postData, commentData, userData, photoData]);
 
   return (

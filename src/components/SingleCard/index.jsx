@@ -15,6 +15,7 @@ const SingleCard = ({ item }) => {
       (singleItem) => singleItem?.id !== element?.id
     );
     dispatch(totalData(result));
+    localStorage.setItem("reduxData", JSON.stringify(result));
   };
 
   const handleDetailsPage = (id) => {

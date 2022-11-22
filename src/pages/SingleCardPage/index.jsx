@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import "./SingleCardPage.styles.css";
 
 const SingleCardPage = () => {
-  const { totalResult } = useSelector((state) => state?.result);
+  // const { totalResult } = useSelector((state) => state?.result);
   const { id } = useParams();
   const [singleBlog, setSingleBlog] = useState(null);
 
   useEffect(() => {
-    const result = totalResult?.find(
-      (element) => Number(element?.id) === Number(id)
-    );
+    const gameJSON = localStorage.getItem("reduxData");
+    const game = JSON.parse(gameJSON);
+    const result = game?.find((element) => Number(element?.id) === Number(id));
     setSingleBlog(result);
-  }, [id, totalResult]);
-
-  console.log("singleBlog", singleBlog);
+  }, [id]);
 
   return (
     <div className="container">
