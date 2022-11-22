@@ -15,25 +15,47 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const getPostData = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-    setPostData(await response.json());
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+      setPostData(await response.json());
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const getCommentData = async () => {
-    const response = await fetch(
-      "https://jsonplaceholder.typicode.com/comments"
-    );
-    setCommentData(await response.json());
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/comments"
+      );
+      setCommentData(await response.json());
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const getUserData = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    setUserData(await response.json());
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/users"
+      );
+      setUserData(await response.json());
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const getPhotoData = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/photos");
-    setPhotoData(await response.json());
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/photos"
+      );
+      setPhotoData(await response.json());
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
