@@ -1,0 +1,21 @@
+.home-card-wrapper {
+  background: #f1ebeb;
+  padding: 20px 20px 40px 20px;
+  text-align: left;
+  margin: 20px 20px;
+}
+.user-name-and-img {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.user-name-and-img img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+.details {
+  color: rgb(113, 108, 128);
+  font-size: 14px;
+}

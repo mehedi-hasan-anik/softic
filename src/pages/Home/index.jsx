@@ -1,6 +1,10 @@
+import { Col, Row } from "antd";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import SingleCard from "../../components/SingleCard";
 import { totalData } from "../../redux/action/cardAction";
+import "./Home.styles.css";
+// import SingleCard from "./"
 
 const Home = () => {
   const { totalResult } = useSelector((state) => state?.result);
@@ -69,8 +73,14 @@ const Home = () => {
   }, [postData, commentData, userData, photoData]);
 
   return (
-    <div>
-      <h1>home</h1>
+    <div className="container">
+      <Row>
+        {totalResult?.map((item, index) => (
+          <Col className="gutter-row" lg={8}>
+            <SingleCard key={index} item={item} />
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 };
