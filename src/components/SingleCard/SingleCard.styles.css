@@ -9,6 +9,10 @@
   align-items: center;
   margin-bottom: 30px;
 }
+.user-name-and-img h2 {
+  font-size: 24px;
+  cursor: pointer;
+}
 .user-name-and-img img {
   width: 60px;
   height: 60px;
@@ -18,4 +22,8 @@
 .details {
   color: rgb(113, 108, 128);
   font-size: 14px;
+}
+.details h4 {
+  font-size: 18px;
+  cursor: pointer;
 }
