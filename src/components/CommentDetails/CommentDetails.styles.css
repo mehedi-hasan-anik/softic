@@ -1,0 +1,18 @@
+.detailsCommentsWrapper {
+  text-align: left;
+  margin-top: 50px;
+}
+.detailsCommentsWrapper ul {
+  margin: 0;
+  padding: 0;
+}
+.detailsCommentsWrapper ul li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.detailsAuthorName {
+  color: #1677ff;
+}
+.singleComment {
+  margin-left: 20px;
+}
