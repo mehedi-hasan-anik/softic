@@ -1,5 +1,5 @@
 import { DeleteOutlined } from "@ant-design/icons";
-import { Button, Col, Row } from "antd";
+import { Button, Col, Row, Spin } from "antd";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -30,25 +30,32 @@ const Home = () => {
 
   return (
     <div className="container">
-      <Row>
-        {totalResult?.map((item, index) => (
-          <Col className="gutter-row" lg={8} key={index}>
-            <div className="home-card-wrapper">
-              <h2 className="postTitle" onClick={() => handleDetials(item?.id)}>
-                {item?.title}
-              </h2>
-              <Author id={item?.userId} />
-              <Comment id={item?.id} />
-              <div className="deleteButtonWrapper">
-                <Button type="primary" onClick={() => handleDele(item?.id)}>
-                  <DeleteOutlined />
-                  Delete
-                </Button>
+      {totalResult ? (
+        <Row>
+          {totalResult?.map((item, index) => (
+            <Col className="gutter-row" lg={8} key={index}>
+              <div className="home-card-wrapper">
+                <h2
+                  className="postTitle"
+                  onClick={() => handleDetials(item?.id)}
+                >
+                  {item?.title}
+                </h2>
+                <Author id={item?.userId} />
+                <Comment id={item?.id} />
+                <div className="deleteButtonWrapper">
+                  <Button type="primary" onClick={() => handleDele(item?.id)}>
+                    <DeleteOutlined />
+                    Delete
+                  </Button>
+                </div>
               </div>
-            </div>
-          </Col>
-        ))}
-      </Row>
+            </Col>
+          ))}
+        </Row>
+      ) : (
+        <Spin size="large" />
+      )}
     </div>
   );
 };

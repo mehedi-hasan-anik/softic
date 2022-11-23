@@ -22,6 +22,7 @@ const Comment = ({ id }) => {
 
   return (
     <div className="commentsWrapper">
+      <h3>Comments ({comments?.length})</h3>
       <ul>
         {comments?.map((item, index) => (
           <li key={index}>

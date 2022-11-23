@@ -1,3 +1,4 @@
+import { Spin } from "antd";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -17,9 +18,15 @@ const SingleCardPage = () => {
 
   return (
     <div className="singlePageWrapper">
-      <h1>{singlePostData?.title}</h1>
-      {singlePostData && <AuthorDetials id={singlePostData?.userId} />}
-      {singlePostData && <CommentDetails id={singlePostData?.id} />}
+      {singlePostData ? (
+        <>
+          <h1>{singlePostData?.title}</h1>
+          {singlePostData && <AuthorDetials id={singlePostData?.userId} />}
+          {singlePostData && <CommentDetails id={singlePostData?.id} />}
+        </>
+      ) : (
+        <Spin size="large" />
+      )}
     </div>
   );
 };
