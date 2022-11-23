@@ -37,7 +37,7 @@ const Home = () => {
               <h2 className="postTitle" onClick={() => handleDetials(item?.id)}>
                 {item?.title}
               </h2>
-              <Author id={item.userId} />
+              <Author id={item?.userId} />
               <Comment id={item?.id} />
               <div className="deleteButtonWrapper">
                 <Button type="primary" onClick={() => handleDele(item?.id)}>

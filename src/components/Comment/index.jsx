@@ -3,7 +3,6 @@ import "./Comment.styles.css";
 
 const Comment = ({ id }) => {
   const [comments, setComments] = useState(null);
-  console.log("comments", comments);
 
   const handleComments = async (id) => {
     try {
@@ -11,7 +10,6 @@ const Comment = ({ id }) => {
         `https://jsonplaceholder.typicode.com/posts/${id}/comments`
       );
       const result = await response.json();
-      console.log("result", result);
       setComments(result);
     } catch (err) {
       console.log("error", err);
