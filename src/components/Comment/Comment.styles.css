@@ -1,0 +1,20 @@
+.commentsWrapper ul {
+  margin: 0;
+  padding: 0;
+}
+.commentsWrapper li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.commentsWrapper li p {
+  margin: 0;
+  padding: 0;
+}
+.authorComment {
+  font-size: 14px;
+  color: rgb(113, 108, 128);
+}
+.authorName {
+  color: #1677ff;
+  text-align: right;
+}

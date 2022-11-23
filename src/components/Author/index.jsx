@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./Author.styles.css";
 
 const Author = ({ id }) => {
   const [authorData, setAuthorData] = useState(null);
@@ -10,12 +11,12 @@ const Author = ({ id }) => {
         `https://jsonplaceholder.typicode.com/users/${id}`
       );
       const result = await response.json();
-      console.log("result", result);
       setAuthorData(result);
     } catch (err) {
       console.log("error", err);
     }
   };
+
   const fetchPhoto = async (id) => {
     try {
       const response = await fetch(
@@ -34,7 +35,7 @@ const Author = ({ id }) => {
   }, [id]);
 
   return (
-    <div>
+    <div className="authorWrappr">
       <img src={authorPhoto?.thumbnailUrl} alt={authorData?.name} />
       <h3>{authorData?.name}</h3>
     </div>

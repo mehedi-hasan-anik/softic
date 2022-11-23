@@ -11,3 +11,13 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 10px;
 }
+.postTitle {
+  cursor: pointer;
+  transition: 0.4s;
+}
+.postTitle:hover {
+  color: #1677ff;
+}
+.deleteButtonWrapper {
+  text-align: right;
+}

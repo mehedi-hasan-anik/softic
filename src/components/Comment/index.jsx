@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./Comment.styles.css";
 
 const Comment = ({ id }) => {
   const [comments, setComments] = useState(null);
@@ -22,15 +23,14 @@ const Comment = ({ id }) => {
   }, [id]);
 
   return (
-    <div>
+    <div className="commentsWrapper">
       <ul>
         {comments?.map((item, index) => (
           <li key={index}>
-            <span>{item?.body}</span>
-            <br />
-            <span style={{ color: "red" }}>
+            <p className="authorComment">{item?.body}</p>
+            <p className="authorName">
               {item?.email ? item.email.split("@")[0] : ""}
-            </span>
+            </p>
           </li>
         ))}
       </ul>

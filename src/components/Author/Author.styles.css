@@ -1,0 +1,14 @@
+.authorWrappr {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.authorWrappr img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.authorWrappr h3 {
+  color: #1677ff;
+}
