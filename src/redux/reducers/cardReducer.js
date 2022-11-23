@@ -7,6 +7,15 @@ const cardReducer = (state = [], action) => {
       };
       return newState;
     }
+    case "DELETE_POST": {
+      const newState = {
+        ...state,
+        totalResult: state.totalResult.filter(
+          (post) => post?.id !== action?.payload
+        ),
+      };
+      return newState;
+    }
 
     default: {
       return state;

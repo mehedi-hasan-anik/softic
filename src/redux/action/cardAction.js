@@ -4,3 +4,9 @@ export const totalData = (payload) => {
     payload,
   };
 };
+export const deletePost = (payload) => {
+  return {
+    type: "DELETE_POST",
+    payload,
+  };
+};
