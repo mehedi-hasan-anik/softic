@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 import SingleCardPage from "./pages/SingleCardPage/index";
 import { totalData } from "./redux/action/cardAction";
 
@@ -29,6 +30,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog/details/:id" element={<SingleCardPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
