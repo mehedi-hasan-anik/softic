@@ -1,5 +1,5 @@
 import { DeleteOutlined } from "@ant-design/icons";
-import { Button, Col, Row, Spin } from "antd";
+import { Button, Col, notification, Row, Spin } from "antd";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -22,6 +22,9 @@ const Home = () => {
     );
     const result = await response.json();
     dispatch(deletePost(id));
+    notification.success({
+      message: "Delete Successfully",
+    });
   };
 
   const handleDetials = (id) => {
