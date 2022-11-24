@@ -2,6 +2,12 @@
   width: 100%;
   height: 300px;
 }
+@media only screen and (max-width: 768px) {
+  .authorDetailsWrapper img {
+    width: 100%;
+    height: 200px;
+  }
+}
 .authorDetailsWrapper p {
   margin: 0;
   padding: 0;
